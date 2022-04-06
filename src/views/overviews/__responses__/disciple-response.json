@@ -1,0 +1,46 @@
+[
+    {
+        "id": "61d1b02005c9ecc4586f9db5",
+        "username": "Albani Idris",
+        "presences": {
+            "_id": "622c173aed5700f600b10454",
+            "date": "2022-01-08T23:00:00.000Z",
+            "info": "hadir",
+            "description": "",
+            "morning": true
+        }
+    },
+    {
+        "id": "61d1b02005c9ecc4586f9db5",
+        "username": "Albani Idris",
+        "presences": {
+            "_id": "622c173aed5700f600b10459",
+            "morning": false,
+            "info": "",
+            "description": "",
+            "date": "2022-01-08"
+        }
+    },
+    {
+        "id": "61d77da6378cb0aa6994fc0c",
+        "username": "Idris Reza",
+        "presences": {
+            "_id": "622c173aed5700f600b10457",
+            "date": "2022-01-08T23:00:00.000Z",
+            "info": "alpha",
+            "description": "Ngga tau kabur kemana",
+            "morning": true
+        }
+    },
+    {
+        "id": "61d77da6378cb0aa6994fc0c",
+        "username": "Idris Reza",
+        "presences": {
+            "_id": "622c173aed5700f600b1045b",
+            "morning": false,
+            "info": "",
+            "description": "",
+            "date": "2022-01-08"
+        }
+    }
+]

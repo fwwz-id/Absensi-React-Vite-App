@@ -1,0 +1,31 @@
+@tailwind components;
+
+@layer components{
+	.date-wrapper{
+		@apply rounded-full text-center cursor-pointer transition duration-100 relative mx-auto;
+	}
+
+	.date-inside{
+		@apply w-9 h-9 flex items-center justify-center rounded-full;
+	}
+	
+	.now{
+		@apply shadow-lg shadow-zinc-200 border border-zinc-100 hover:bg-sky-500 hover:text-white hover:border-sky-500 text-sm sm:text-lg;
+	}
+
+	.prev-or-after{
+		@apply text-xs bg-zinc-100;
+	}
+
+	.current-date{
+		@apply bg-sky-500 bg-opacity-30 rounded-full;
+	}
+
+	.card{
+		@apply flex items-center justify-between w-full rounded p-4 bg-zinc-600;
+	}
+
+	.card-content{
+		@apply font-bold text-xl text-white;
+	}
+}

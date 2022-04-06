@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components{
+    .container-wrapper{
+        @apply flex h-screen justify-center items-center relative;
+    }
+    .form-box{
+        @apply bg-zinc-800 rounded-sm p-6 w-11/12 md:w-[35rem];
+    }
+}

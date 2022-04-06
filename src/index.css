@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+    color rules
+        --
+        primary: (blue)
+            -dark: sky-500
+                hovered: sky-600
+            -light: sky-500
+                hovered: sky-600
+
+        disabled:
+            -dark: z
+
+        --
+        container:
+            -dark: zinc-800
+            -light: --
+        
+*/
+
+@layer base{
+    p, a, label, input{
+        @apply text-sm md:text-base;
+    }
+
+    p, a, h1, h2, h3, h4, h5, h6 {
+        @apply text-zinc-600;
+    }
+}
+
+@layer components {
+    /* miscellaneous */
+	.App{
+        @apply relative min-h-screen w-screen;
+    }
+    
+    .default-input{
+        @apply bg-transparent outline-none rounded-sm;
+    }
+
+    .text-secondary{
+        @apply text-zinc-400;
+    }
+    /* # miscellaneous */
+    
+
+    /* buttons */
+    .btn{
+        @apply p-2 md:px-4 md:py-2 disable;
+    }
+    
+    .btn-primary{
+        @apply bg-sky-500 text-white transition-colors duration-200 hover:bg-sky-600;
+    }
+    
+    .btn-error{
+        @apply bg-fuchsia-500 text-white transition-colors duration-200 hover:bg-fuchsia-500;
+    }
+
+    .disable{
+        @apply disabled:bg-slate-700 disabled:cursor-not-allowed disabled:hover:bg-slate-700;
+    }
+
+    .disable-on-white-surface{
+        @apply disabled:bg-zinc-300 disabled:cursor-not-allowed disabled:hover:bg-zinc-300;
+    }
+
+    /* # buttons */
+
+    /* commons */
+    .link{
+        @apply text-sky-500 font-bold transition-colors hover:text-sky-600;
+    }
+    /* # commons */
+    
+}
+
