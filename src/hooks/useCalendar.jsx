@@ -4,42 +4,26 @@ import produce from "immer";
 import dayjs from "dayjs";
 import "../utils/lib/date.lib";
 
+import { CHANGE_YEAR, CHANGE_MONTH, CHANGE_DATE } from '../utils/constants/custom-hooks-w-reducer.const';
+
 // constants
 const __defaults = {
-	date: dayjs().toObject(),
-};
-
-// actions
-export const CHANGE_YEAR = "CHANGE_YEAR";
-export const CHANGE_MONTH = "CHANGE_MONTH";
-export const CHANGE_DATE = "CHANGE_DATE";
-
-const reducer = produce((draft, action) => {
-	const { type, payload } = action;
-
-	switch (type) {
-		case CHANGE_DATE:
-			draft.date.date = payload;
-			break;
-		case CHANGE_MONTH:
-			draft.date.months = payload;
-			break;
-		case CHANGE_YEAR:
-			draft.date.years = payload;
-			break;
-
-		default:
-			return draft;
+	date: {
+		date: dayjs().date(),
+		months: dayjs().month() + 1,
+		years: dayjs().year(),
+		hours: dayjs().hour(),
+		minutes: dayjs().minute()
 	}
-});
+};
 
 // custom hook
 function useWeek(date) {
 	const [week, setWeek] = useState(1);
 	const [dateByWeek, setDateByWeek] = useState(() => {
 		// eslint-disable-next-line
-		const {current, ...dates} = getWeeks(date);
-		return dates
+		const {current, ...weeks} = getWeeks(date);
+		return weeks
 	});
 
 	// date => { years: 2022, months: 2, date: 30, ...times }
@@ -153,7 +137,7 @@ function useWeek(date) {
 				} else if (temp.date <= thirdWeek.end) {
 					weeks.current = 3;
 				} else if (temp.date <= fourthWeek.end) {
-					weeks.current = 2;
+					weeks.current = 4;
 				} else {
 					weeks.current = 5;
 				}
@@ -200,6 +184,25 @@ function useWeek(date) {
 
 	return { week, setWeek, dates: dateByWeek, setDates: setDateByWeek, setUseWeek: render };
 }
+
+const reducer = produce((draft, action) => {
+	const { type, payload } = action;
+
+	switch (type) {
+		case CHANGE_DATE:
+			draft.date.date = payload;
+			break;
+		case CHANGE_MONTH:
+			draft.date.months = payload;
+			break;
+		case CHANGE_YEAR:
+			draft.date.years = payload;
+			break;
+
+		default:
+			return draft;
+	}
+});
 
 function useCalendar(date = __defaults.date) {
 	const [state, dispatch] = useReducer(reducer, { date });

@@ -44,6 +44,26 @@
     .text-secondary{
         @apply text-zinc-400;
     }
+
+    .status-idle{
+        @apply bg-zinc-300;
+    }
+    
+    .status-attend{
+        @apply bg-emerald-500;
+    }
+
+    .status-absent{
+        @apply bg-red-400;
+    }
+
+    .status-sick{
+        @apply bg-yellow-400;
+    }
+
+    .status-permit{
+        @apply bg-sky-500;
+    }
     /* # miscellaneous */
     
 

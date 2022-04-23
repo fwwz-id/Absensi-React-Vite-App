@@ -22,7 +22,18 @@ const discipleSlice = createSlice({
         status: 'loaded',
         data: [],
     },
-    reducers: {},
+    reducers: {
+        SET_INFO: (state, action) => {
+            const { payload } = action;
+            const current = state.data.filter((disciple) => disciple.presences._id === payload.id);
+            current[0]["presences"]["info"] = payload.info
+        },
+        SET_DESCRIPTION: (state, action) => {
+            const { payload } = action;
+            const current = state.data.filter((disciple) => disciple.presences._id === payload.id);
+            current[0]["presences"]["description"] = payload.description
+        }
+    },
     extraReducers: {
         [disciplesThunk.pending]: (state) => {
             state.status = "loading"
@@ -30,7 +41,7 @@ const discipleSlice = createSlice({
         [disciplesThunk.fulfilled]: (state, payload) => {
             const { payload: data } = payload
             state.status = "loaded"
-            state.data.push(...data)
+            state.data = data
         },[disciplesThunk.rejected]: (state) => {
             state.status = "rejected";
         }
@@ -38,4 +49,5 @@ const discipleSlice = createSlice({
 })
 
 const { actions, reducer } = discipleSlice;
-export default reducer
+export const { SET_INFO, SET_DESCRIPTION } = actions;
+export default reducer;

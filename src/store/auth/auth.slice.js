@@ -11,6 +11,7 @@ const authSlice = createSlice({
 			username: "",
 			role: "",
 		},
+		isAuth: true,
 		message: "",
 	},
 	reducers: {
@@ -24,8 +25,12 @@ const authSlice = createSlice({
 			state.data.id = payload.id;
 			state.data.username = payload.username;
 			state.data.role = payload.role;
+			state.isAuth = true;
 			state.loading = "idle"
 		},
+		failed: (state) => {
+			state.isAuth = false
+		}
 	},
 
 	extraReducers: {
@@ -84,6 +89,7 @@ const authSlice = createSlice({
 	},
 });
 
+
 const { actions, reducer } = authSlice;
-export const { loading, loaded } = actions;
+export const { loading, loaded, failed } = actions;
 export default reducer;

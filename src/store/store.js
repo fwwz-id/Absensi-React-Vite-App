@@ -6,14 +6,14 @@ import authReducer from "./auth/auth.slice";
 import disicplesReducer from "./data/disciples/disciples.slice";
 
 const reducer = {
-    auth: authReducer,
-    disciples: disicplesReducer
-}
+	auth: authReducer,
+	disciples: disicplesReducer,
+};
 
 const store = configureStore({
-    reducer,
-    devTools: true,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
-})
+	reducer,
+	devTools: true,
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+});
 
 export default store;

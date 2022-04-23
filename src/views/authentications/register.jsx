@@ -139,12 +139,13 @@ function Register() {
 		<Container title="Register">
 			<form
 				action="POST"
-				className="space-y-6"
+				className="space-y-6 flex flex-col"
 				onSubmit={(e) => handleSubmit(e)}>
 				<InputWithLabel
+					wrapperStyles="grid"
 					label="Username"
 					labelFor="username"
-					labelStyles="font-bold"
+					labelStyles="font-bold text-white"
 					inputName="username"
 					inputStyles={
 						!isInputInvalid.username
@@ -166,9 +167,10 @@ function Register() {
 					</TextHelper>
 				</InputWithLabel>
 				<InputWithLabel
+					wrapperStyles="grid"
 					label="Password"
 					labelFor="password"
-					labelStyles="font-bold"
+					labelStyles="font-bold text-white"
 					inputName="password"
 					inputType="password"
 					inputStyles={
@@ -191,9 +193,10 @@ function Register() {
 					</TextHelper>
 				</InputWithLabel>
 				<InputWithLabel
+					wrapperStyles="grid"
 					label="Confirm Password"
 					labelFor="confpassword"
-					labelStyles="font-bold"
+					labelStyles="font-bold text-white"
 					inputName="confpassword"
 					inputType="password"
 					inputStyles="border-b border-b-sky-500 pb-2 transition-colors duration-200 focus:border-b-sky-400"

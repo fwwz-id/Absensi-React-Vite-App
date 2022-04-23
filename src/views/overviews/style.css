@@ -1,6 +1,19 @@
 @tailwind components;
 
 @layer components{
+	/* customs */
+	.content-container{
+		@apply lg:flex;
+	}
+
+	.content{
+		@apply px-6 py-2 lg:w-full;
+	}
+
+	.calendar-components-wrapper{
+		@apply mt-4 space-y-2;
+	}
+
 	.date-wrapper{
 		@apply rounded-full text-center cursor-pointer transition duration-100 relative mx-auto;
 	}
@@ -27,5 +40,9 @@
 
 	.card-content{
 		@apply font-bold text-xl text-white;
+	}
+
+	.circular{
+		@apply p-2 inline-block rounded-full;
 	}
 }
